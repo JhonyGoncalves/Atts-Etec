@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALC imc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p id="logotxt">CALC</p>
+    </header>
+    <main>
+        <article>
+            <h1>Oque é IMC?</h1>
+            <p id="texto">IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa. <br>
+
+                O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua altura elevada ao quadrado. Diz-se que o indivíduo tem peso normal quando o resultado do IMC está entre 18,5 e 24,9. <br>
+
+                Quer descobrir seu IMC? Insira seu peso e sua altura nos campos abaixo e click em enviar, o resultado será mostrado abaixo.
+            </p>
+        </article>
+        <div id="calculo">
+            <div id="sideA">
+                <p id="textocalc">Seu peso (kg)</p>
+                <input class="inputs" id="inputA" type="number">
+                <input class="buttons" id="buttonA" type="button" onclick="calcular()" value="Enviar">
+            </div>
+            <div id="sideB">
+                <p id="textocalc">Sua altura (m)</p>
+                <input class="inputs" id="inputB" type="number">
+                <input class="buttons" id="buttonB" type="button" value="Limpar">
+            </div>
+        </div>
+        <div id="calculores">
+            <p id="imctxt">IMC:</p>
+            <p id="result"></p>
+        </div>
+    </main>
+    <footer>
+        <p>₢ 2023 feito por Jhony</p>
+    </footer>
+</body>
+<script>
+    function calcular(){
+        var peso = document.getElementById("inputA").value;
+        var altura = document.getElementById("inputB").value;
+        var imc = peso / (altura * altura);
+        document.getElementById("result").innerHTML = imc.toFixed(2);
+    }
+</script>
+</html>
